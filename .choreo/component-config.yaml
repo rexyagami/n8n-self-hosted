@@ -1,0 +1,27 @@
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
+spec:
+  inbound:
+    - name: N8N Service
+      port: 443
+      type: REST
+      networkVisibility: Public
+      context: /n8n
+      schemaFilePath: n8n_openapi.yaml
+  outbound:
+    serviceReferences: []
+  environmentVariables:
+    - name: N8N_EDITOR_BASE_URL
+      value: ''
+    - name: N8N_HOST
+      value: ''
+    - name: N8N_PORT
+      value: '443'
+    - name: N8N_PROTOCOL
+      value: https
+    - name: NODE_VERSION
+      value: '18.17'
+    - name: WEBHOOK_TUNNEL_URL
+      value: ''
+    - name: WEBHOOK_URL
+      value: ''
